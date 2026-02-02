@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class PhoneMasker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter your phone number: ");
+        String phoneInput = scanner.nextLine();
+        
+        String masked = phoneInput.replaceAll("(?<!^.)[0-9](?=.{4})", "*");
+        
+        System.out.println("Masked Number: " + masked);
+        
+        scanner.close();
+    }
+}
